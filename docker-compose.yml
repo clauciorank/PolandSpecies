@@ -1,0 +1,25 @@
+version: '3.6'
+
+services:
+  shinyproxy:
+    image: shinyproxy
+    container_name: shinyproxy
+    build: 
+      context: ./shinyproxy
+    volumes:
+      - ./shinyproxy/application.yml:/opt/shinyproxy/application.yml
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8080:8080
+    networks:
+      - sp-example-net
+   
+  polandspecies:
+    image: polandspecies
+    container_name: polandspecies
+    build: 
+      context: ./app
+
+networks:
+  sp-example-net:
+    name: sp-example-net

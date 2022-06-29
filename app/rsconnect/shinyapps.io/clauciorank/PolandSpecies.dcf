@@ -1,0 +1,13 @@
+name: PolandSpecies
+title: PolandSpecies
+username:
+account: clauciorank
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6565474
+bundleId: 6054142
+url: https://clauciorank.shinyapps.io/PolandSpecies/
+when: 1656504066.75026
+lastSyncTime: 1656504066.75028
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,27 @@
+proxy:
+  title: Shinyproxy for Poland Species
+  landing-page: /
+  template-path: ./templates
+  logo-url: https://lever-client-logos.s3.us-west-2.amazonaws.com/5b27d263-61b3-4259-9180-7d9894d90879-1616412747195.png
+  heartbeat-rate: 10000
+  heartbeat-timeout: 50000
+  container-wait-time: 60000
+  bind-address: 0.0.0.0
+  port: 8080
+   
+  
+  docker:
+      internal-networking: true
+      container-network: sp-example-net
+  specs:
+  - id: polandspecies
+    display-name: Poland Species
+    description: Species observations in Poland
+    container-cmd: ["R",  "-e", "shiny::runApp('app.R', port = 3838, host = '0.0.0.0')"]
+    container-image: polandspecies
+    container-network: "${proxy.docker.container-network}"
+     
+
+logging:
+  file:
+    shinyproxy.log

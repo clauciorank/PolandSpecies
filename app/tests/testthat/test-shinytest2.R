@@ -1,0 +1,18 @@
+library(shinytest2)
+
+test_that("{shinytest2} recording: app", {
+  app <- AppDriver$new(name = "app", height = 980, width = 1619)
+  app$set_inputs(`id1-name` = "All Species")
+  app$expect_values(output = "id1-plotMap")
+  app$expect_values(output = "id1-timeline")
+  app$set_inputs(`id1-name` = "")
+  app$set_inputs(`id1-name` = "Marsh Woundwort - Stachys palustris")
+  app$set_inputs(`id1-name` = "")
+  app$set_inputs(`id1-name` = "Single-dotted Wave - Idaea dimidiata")
+  app$set_inputs(`id1-name` = "")
+  app$set_inputs(`id1-name` = "Sessile Oak - Quercus petraea")
+  app$set_inputs(`id1-name` = "")
+  app$set_inputs(`id1-name` = "Alpine Catchfly - Silene pusilla")
+  app$set_inputs(`id1-name` = "")
+  app$set_inputs(`id1-name` = "Red-backed Shrike - Lanius collurio")
+})
